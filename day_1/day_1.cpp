@@ -16,9 +16,10 @@ int main() {
 	std::vector<long int> list2;
 
 	std::string line;
+	int num1, num2;
 
 	while(std::getline(file, line)){
-		int num1, num2;
+		
 		std::istringstream iss(line);
 
 		iss >> num1 >> num2;
