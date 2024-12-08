@@ -1,3 +1,6 @@
+.vscode
+*input.txt
+
 # Prerequisites
 *.d
 
