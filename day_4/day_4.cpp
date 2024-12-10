@@ -95,6 +95,31 @@ int xmas_finder(std::vector<std::string> text){
 
 
 
+int cross_finder(std::vector<std::string> text){
+    int text_len = text.size();
+    int line_len = text[0].size();
+
+    int mas_counter = 0;
+
+    // lines
+    for(int i=0; i<text_len-2; i++){
+        // positions in line back and forth
+        for(int j=0; j<line_len-2; j++){
+            if(
+                (
+                    ((text[i][j]=='M' && text[i][j+2]=='M') && (text[i+2][j]=='S' && text[i+2][j+2]=='S')) || 
+                    ((text[i][j]=='S' && text[i][j+2]=='S') && (text[i+2][j]=='M' && text[i+2][j+2]=='M')) ||
+                    ((text[i][j]=='M' && text[i][j+2]=='S') && (text[i+2][j]=='M' && text[i+2][j+2]=='S')) || 
+                    ((text[i][j]=='S' && text[i][j+2]=='M') && (text[i+2][j]=='S' && text[i+2][j+2]=='M'))
+                ) &&
+                (text[i+1][j+1]=='A')
+            ) mas_counter++;
+        }
+    }
+
+    return mas_counter;
+}
+
 
 int main(){
     std::ifstream file("input.txt");
@@ -111,6 +136,7 @@ int main(){
     }
 
     std::cout << xmas_finder(text) << std::endl;
+    std::cout << cross_finder(text) << std::endl;
 
     system("pause");
 

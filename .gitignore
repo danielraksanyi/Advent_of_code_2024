@@ -1,5 +1,7 @@
 .vscode
 *input.txt
+test.txt
+
 
 # Prerequisites
 *.d
